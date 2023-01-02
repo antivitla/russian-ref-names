@@ -1,7 +1,4 @@
-import MaleNames from './male-names.json';
-import FemaleNames from './female-names.json';
+import MaleNames from './male-names.js';
+import FemaleNames from './female-names.js';
 
-export default {
-  male: MaleNames,
-  female: FemaleNames,
-};
+export default { MaleNames, FemaleNames };
