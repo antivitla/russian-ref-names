@@ -12,6 +12,5 @@ export default function recognize (str, sex = '') {
   order.forEach(names => {
     found.push(...Object.values(names).filter(name => str.match(name.regexp)));
   });
-  console.log(found.map(item => item.name));
   return found.map(item => item.name);
 }
