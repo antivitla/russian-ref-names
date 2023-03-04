@@ -3,14 +3,14 @@ import femaleNames from './female-names.js';
 import recognize from './recognize.js';
 
 test('Распознавание пола', () => {
-  expect(recognize('саша', 'мужчина')).toBe('Александр');
-  expect(recognize('саша', 'женщина')).toBe('Александра');
-  expect(recognize('ваня')).toBe('Иван');
-  expect(recognize('катя')).toBe('Екатерина');
-  expect(recognize('маша')).toBe('Мария');
-  expect(recognize('даша')).toBe('Дарья');
-  expect(recognize('таня')).toBe('Татьяна');
-  expect(recognize('вася')).toBe('Василий');
-  expect(recognize('игорек')).toBe('Игорь');
-  expect(recognize('рома')).toBe('Роман');
+  expect(recognize('саша', 'мужчина')[0]).toBe('Александр');
+  expect(recognize('саша', 'женщина')[0]).toBe('Александра');
+  expect(recognize('ваня')).toEqual(['Иван']);
+  expect(recognize('катя')).toEqual(['Екатерина']);
+  expect(recognize('маша')).toEqual(['Мария']);
+  expect(recognize('даша')).toEqual(['Дарья']);
+  expect(recognize('таня')).toEqual(['Татьяна']);
+  expect(recognize('вася')).toEqual(['Василий']);
+  expect(recognize('игорек')).toEqual(['Игорь']);
+  expect(recognize('рома')).toEqual(['Роман']);
 });

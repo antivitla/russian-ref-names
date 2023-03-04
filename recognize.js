@@ -1,21 +1,17 @@
 import maleNames from './male-names.js';
 import femaleNames from './female-names.js';
 
-export default function recognize (str, sex) {
+export default function recognize (str, sex = '') {
   let order = [maleNames, femaleNames]
-  if (sex === 'мужчина') {
+  if (sex.toLowerCase() === 'мужчина') {
     order = [maleNames, femaleNames];
-  } else if (sex === 'женщина') {
+  } else if (sex.toLowerCase() === 'женщина') {
     order = [femaleNames, maleNames];
   }
-  let found;
-  order.some(names => {
-    found = Object.values(names).find(name => str.match(name.regexp));
-    if (found) {
-      return true;
-    }
+  const found = [];
+  order.forEach(names => {
+    found.push(...Object.values(names).filter(name => str.match(name.regexp)));
   });
-  if (found) {
-    return found.name;
-  }
+  console.log(found.map(item => item.name));
+  return found.map(item => item.name);
 }
