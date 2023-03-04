@@ -1,6 +1,6 @@
 {
   "name": "@russian-ref/names",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Мужские и женские имена, используемые в Российской Федерации",
   "main": "names.js",
   "type": "module",
